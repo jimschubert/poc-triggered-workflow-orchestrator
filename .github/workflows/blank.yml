@@ -2,7 +2,8 @@
 name: Repository Dispatch
 on:
   repository_dispatch:
-    types: ${{secrets.EVENT_NAME}}
+    types:
+      - ${{secrets.EVENT_NAME}}
 jobs:
   myEvent:
     runs-on: ubuntu-latest
