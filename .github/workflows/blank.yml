@@ -3,7 +3,7 @@ name: Repository Dispatch
 on:
   repository_dispatch:
     types:
-      - ${{secrets.EVENT_NAME}}
+      - triggered-event
 jobs:
   myEvent:
     runs-on: ubuntu-latest
