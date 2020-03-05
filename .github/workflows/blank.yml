@@ -1,9 +1,6 @@
 # Example via https://github.com/marketplace/actions/repository-dispatch
 name: Repository Dispatch
-on:
-  repository_dispatch:
-    types:
-      - ${{secrets.EVENT_NAME}}
+on: [repository_dispatch]
 jobs:
   myEvent:
     runs-on: ubuntu-latest
