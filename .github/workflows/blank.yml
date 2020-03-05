@@ -1,0 +1,12 @@
+# Example via https://github.com/marketplace/actions/repository-dispatch
+name: Repository Dispatch
+on:
+  repository_dispatch:
+    types: [ "${{secrets.EVENT_NAME}}" ]
+jobs:
+  myEvent:
+    runs-on: ubuntu-latest
+    steps:
+      # Runs a single command using the runners shell
+      - name: Details of Event
+        run: echo "REF=${{ github.event.client_payload.ref }} SHA=${{ github.event.client_payload.sha }} CONTENT=${{ github.event.client_payload.content }}" 
